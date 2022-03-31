@@ -6,6 +6,7 @@ class FormApp extends CI_Controller
     /* Sınıfın yapıcı metodu. Sınıf çağırıldığında otomatik çalışır. */
     public function __construct()
     {
+        
         parent::__construct();
     }
 
@@ -14,6 +15,7 @@ class FormApp extends CI_Controller
     {
         $this->load->view("form");
     }
+ 
     public function insert()
     {
         //echo "Form Kayıt İşlemi" ;
@@ -26,9 +28,14 @@ class FormApp extends CI_Controller
         );
 
         $this->load->model("FormApp_Model");
+
         $insert = $this->FormApp_Model->insert($data);
         if ($insert) {
             echo "Kayıt işlemi başarılı.";
         }
+    }
+    public function getall()
+    {
+        echo "listeleme işlemi başladı";
     }
 }

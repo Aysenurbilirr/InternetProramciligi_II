@@ -15,4 +15,5 @@ class FormApp_Model extends CI_Model
     {
         return $this->db->insert($this->tableName, $data);
     }
+    
 }
